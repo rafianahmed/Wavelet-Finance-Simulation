@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wavelet Finance Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Wavelet Analysis for Financial Time Series</h1>
+
+    <div class="description">
+        <h2>Why Wavelets in Finance?</h2>
+        <p>
+            Financial markets operate across multiple time horizons. 
+            Short-term traders (minutes/hours) and long-term investors (weeks/months)
+            influence price behavior differently.
+        </p>
+        <p>
+            Wavelet Transform decomposes returns into multiple time scales,
+            helping detect volatility clustering, dominant cycles, and
+            regime shifts.
+        </p>
+    </div>
+
+    <div class="controls">
+        <label>Volatility (σ):</label>
+        <input type="range" id="volatility" min="0.1" max="2" step="0.1" value="1">
+
+        <label>Shock Intensity:</label>
+        <input type="range" id="shock" min="0" max="5" step="0.5" value="1">
+
+        <button onclick="generateMarket()">Generate Market</button>
+        <button onclick="analyzeWavelet()">Run Wavelet Analysis</button>
+    </div>
+
+    <canvas id="priceChart"></canvas>
+    <canvas id="returnChart"></canvas>
+    <canvas id="waveletChart"></canvas>
+
+    <div class="interpretation">
+        <h3>Quantitative Interpretation</h3>
+        <p id="analysisText">Run simulation to see regime analysis.</p>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
